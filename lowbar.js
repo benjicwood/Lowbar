@@ -1,8 +1,15 @@
+var _ = require('underscore')
+
+
+
 var _ = {};
 
-_.each = function() {
-  // your code here 
+_.identity = function(x) {
+  return x;
 };
+
+
+
 
 if (typeof module !== 'undefined') {
   module.exports = _;
