@@ -1,4 +1,4 @@
-var _ = require('underscore')
+//var _ = require('underscore')
 
 
 var _ = {};
@@ -20,7 +20,6 @@ _.first = function (array, num) {
         (num > array.length) {
             num = array.length
         }
-        console.log(num);
         var newArray = [];
         for (i = 0; i < num; i++) {
             newArray.push(array[i]);
@@ -45,7 +44,15 @@ _.last = function (array, num) {
   return newArray;
 };
 
-console.log(_.last([5,4,3,2,1], 0));
+_.each = function(array, func) {
+    if(!array) {
+        return;
+    };
+
+    for (i = 0; i < array.length; i++) {
+        func(array[i]);
+    };
+};
 
 
 if (typeof module !== 'undefined') {
