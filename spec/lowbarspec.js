@@ -16,13 +16,12 @@ describe('_', function () {
   it('_.identity takes one argument', function () {
     expect(_.identity.length).to.equal(1);
   });
-  it('_.identity should return something', function () {
-    var x
-    expect(_.identity(x)).to.equal(x);
-  })
+  it('_.identity should not return undefined if given an argument of x', function () {
+    expect(_.identity('x')).to.not.equal(undefined);
+  });
   it('_.indentity should return the unmodified argument', function () {
     expect(_.identity('x')).to.equal('x');
-  })
+  });
 
   describe('#each', function () {
     it('is a function', function() {
