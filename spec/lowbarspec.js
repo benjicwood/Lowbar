@@ -193,5 +193,8 @@ describe('_.reject', function () {
   it('should be a function', function () {
     expect(_.reject).to.be.a('function');
   });
+  it('takes two arguments', function () {
+      expect(_.reject.length).to.equal(2);
+  });
 });
 //_.each(inputArray,function(arrayElement){newArray.push(arrayElement*3);})

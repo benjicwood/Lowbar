@@ -66,7 +66,7 @@ var newArray=[];
 return newArray;
 };
 
-_.reject = function () {
+_.reject = function (array, fun) {
 
 };
 
