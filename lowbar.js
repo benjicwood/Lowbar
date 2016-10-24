@@ -57,8 +57,13 @@ _.indexOf = function (num, array, isSorted) {
 };
 
 _.filter = function (array, fun) {
-
-
+var newArray=[];
+  for(i=0;i<array.length;i++){
+    if(fun(array[i])){
+      newArray.push(array[i]);
+    }    
+  }
+return newArray;
 };
 
 
