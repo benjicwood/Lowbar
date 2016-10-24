@@ -241,26 +241,37 @@ describe('_.uniq', function () {
 });
 
 describe('_.map', function () {
-    it('should be a function', function () {
-        expect(_.map).to.be.a('function');
-    });
-    it('should take at least 2 arguments', function () {
-        expect(_.map.length).to.be.least(2);
-    });
-    it('[2,4,6] should return [4,8,12]', function () {
-        var input = [2, 4, 6 ];
-        
-        expect(_.map(input, function (num) {
-            return num *2;
-        })).to.eql([4,8,12]);
+  it('should be a function', function () {
+      expect(_.map).to.be.a('function');
+  });
+  it('should take at least 2 arguments', function () {
+      expect(_.map.length).to.be.least(2);
+  });
+  it('[2,4,6] should return [4,8,12]', function () {
+    var input = [2, 4, 6 ];
+    expect(_.map(input, function (num){
+      return num *2;
+    })).to.eql([4,8,12]);
     });
     it('[2,4,6] should return [1,3,5]', function () {
         var input = [2, 4, 6 ];
-
-        expect(_.map(input, function (num) {
-            return num-1;
-        })).to.eql([1,3,5]);
+    expect(_.map(input, function (num) {
+    return num-1;
+    })).to.eql([1,3,5]);
     });
-
 });
-
+describe('_.pluck', function () {
+  it('is a function', function () {
+    expect(_.pluck).to.be.a('function');
+  });
+  it('takes two arguments', function () {
+    expect(_.pluck.length).to.equal(2);
+  });
+  it('returns an array', function () {
+    expect(_.pluck()).to.be.a('array');
+  });
+  it('should return an array of names from an array of objects', function () {
+    var input = [{name: 'Jeff', age: 50}, {name: 'Bob', age: 39}, {name: 'Jack', age: 54}];
+    expect(_.pluck(input, 'name')).to.eql(['Jeff', 'Bob', 'Jack']);
+});
+});

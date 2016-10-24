@@ -94,12 +94,20 @@ return uniqArray
 }
 
 _.map=function(array,fun){
-
   var newArray=[];
   for(i=0;i<array.length;i++){
-
-      newArray.push(fun(array[i]));
-    };
-  
+  newArray.push(fun(array[i]));
+  };
   return newArray;
 }
+
+_.pluck = function (array, propertyName) {
+  var newArray=[];
+  if (!array) {
+    return [];
+  }
+  for(i=0;i<array.length;i++){
+  newArray.push(array[i][propertyName]);
+  };
+  return newArray;
+};
