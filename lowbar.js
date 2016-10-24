@@ -47,36 +47,48 @@ _.indexOf = function (num, array, isSorted) {
   if (sort == 0) {
     return true
   }
-}
+  }
   for (var i = 0; i < array.length; i++) {
   if (array[i] == num) {
   return i
     };
 };
-
 };
 
 _.filter = function (array, fun) {
 var newArray=[];
   for(i=0;i<array.length;i++){
-    if(fun(array[i])){
-      newArray.push(array[i]);
-    }
-  }
+  if(fun(array[i])){
+  newArray.push(array[i]);
+    };
+};
 return newArray;
 };
 
 _.reject = function (array, fun) {
 var newArray=[];
   for(i=0;i<array.length;i++){
-    if(!fun(array[i])){
-      newArray.push(array[i]);
-    }
-  }
+  if(!fun(array[i])){
+  newArray.push(array[i]);
+    };
+};
   return newArray;
 };
 
 
 if (typeof module !== 'undefined') {
     module.exports = _;
+}
+
+_.uniq = function (array) {
+var uniqArray = []
+// this.each ?
+this.each(array, function (e) {
+  // is the element in the uniq?
+if (uniqArray.indexOf(e) === -1) {
+  uniqArray.push(e)
+}
+  // if not push it in
+});
+return uniqArray
 }
