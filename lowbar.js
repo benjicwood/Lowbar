@@ -120,3 +120,15 @@ returnValue=0;
   return returnValue;
 }
 
+_.contains= function(list,val){
+  
+  return (_.indexOf(list,val)==-1);
+
+}
+
+_.every=function(list, fun){
+
+  for(i=0;i<list.length;i++){
+   if (!fun(list[i])){ return false;}
+  } return true;
+}

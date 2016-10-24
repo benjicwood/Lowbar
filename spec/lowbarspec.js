@@ -292,3 +292,43 @@ describe('_.reduce', function () {
 
 
     });
+
+describe('_.contains', function () {
+    it('should be a function', function () {
+        expect(_.contains).to.be.a('function');
+    });
+    it('should take at least 2 arguments', function () {
+        expect(_.contains.length).to.be.least(2);
+    });
+    it('should return true for _.contains([1,2,3],3)', function () {
+        expect(_.contains([1,2,3],3)).to.equal(true);
+    });
+    it('should return true for [,a,b,c],c', function () {
+        expect(_.contains(['a','b','c'],'c')).to.equal(true);
+    });
+
+
+});
+
+
+describe('_.every', function () {
+    it('should be a function', function () {
+        expect(_.every).to.be.a('function');
+    });
+    it('should take at least 2 arguments', function () {
+        expect(_.every.length).to.be.least(2);
+    });
+    it('should return true for _.every([1,2,3],3)', function () {
+        var input = [2, 4, 6 ];
+
+        expect(_.every(input,function(num){
+               if(num%2===0){return true}  })).to.equal(true);
+    });
+    it('should return false for _.every([2,5,6)', function () {
+        var input = [2, 4, 6 ];
+
+        expect(_.every(input,function(num){
+            if(num%2===0){return true}  })).to.equal(true);
+    });
+    
+});
