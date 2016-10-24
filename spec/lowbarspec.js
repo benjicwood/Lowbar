@@ -203,13 +203,19 @@ describe('_.reject', function () {
       };
       expect(_.reject(input, fun)).to.be.a('array');
   });
-  it('var input=[1,2,3,4,5,6,7] should return only odd numbers', function () {
+  it('[1,2,3,4,5,6,7] should return only odd numbers', function () {
       var input = [1, 2, 3, 4, 5, 6, 7];
       var output = [];
-      //var fun=function(inputElement){ if(inputElement%2==0);{return true;}};
       expect(_.reject(input, function (num) {
           return num % 2 == 0;
       })).to.eql([1,3,5,7]);
-});
+    });
+    it('[2,4,6,8,8,8] should return an empty array when asked for odd numbers', function () {
+        var input = [2, 4, 6, 8, 8, 8];
+        var output = [];
+        expect(_.reject(input, function (num) {
+            return num % 2 == 0;
+        })).to.eql([]);
+      });
 });
 //_.each(inputArray,function(arrayElement){newArray.push(arrayElement*3);})

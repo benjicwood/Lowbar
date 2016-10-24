@@ -67,7 +67,6 @@ return newArray;
 };
 
 _.reject = function (array, fun) {
-
 var newArray=[];
   for(i=0;i<array.length;i++){
     if(!fun(array[i])){
