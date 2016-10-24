@@ -202,6 +202,14 @@ describe('_.reject', function () {
           return
       };
       expect(_.reject(input, fun)).to.be.a('array');
-  })
+  });
+  it('var input=[1,2,3,4,5,6,7] should return only odd numbers', function () {
+      var input = [1, 2, 3, 4, 5, 6, 7];
+      var output = [];
+      //var fun=function(inputElement){ if(inputElement%2==0);{return true;}};
+      expect(_.reject(input, function (num) {
+          return num % 2 == 0;
+      })).to.eql([1,3,5,7]);
+});
 });
 //_.each(inputArray,function(arrayElement){newArray.push(arrayElement*3);})

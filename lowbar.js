@@ -68,8 +68,13 @@ return newArray;
 
 _.reject = function (array, fun) {
 
-return []
-
+var newArray=[];
+  for(i=0;i<array.length;i++){
+    if(!fun(array[i])){
+      newArray.push(array[i]);
+    }
+  }
+  return newArray;
 };
 
 
