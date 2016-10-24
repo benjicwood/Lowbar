@@ -111,3 +111,12 @@ _.pluck = function (array, propertyName) {
   };
   return newArray;
 };
+
+_.reduce= function(array, fun){
+returnValue=0;
+  for(i=0;i<array.length;i++){
+    returnValue= fun(returnValue,array[i]);
+  }
+  return returnValue;
+}
+
