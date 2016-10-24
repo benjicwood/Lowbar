@@ -164,7 +164,7 @@ describe('_.filter', function () {
             return
         };
         expect(_.filter(input, fun)).to.be.a('array');
-    })
+    });
     it('var input=[1,2,3,4,5,6,7] should return only even numbers', function () {
         var input = [1, 2, 3, 4, 5, 6, 7];
         var output = [];
@@ -196,5 +196,12 @@ describe('_.reject', function () {
   it('takes two arguments', function () {
       expect(_.reject.length).to.equal(2);
   });
+  it('returns an array', function () {
+      var input = [1, 2, 3, 4, 5, 6, 7];
+      var fun = function () {
+          return
+      };
+      expect(_.reject(input, fun)).to.be.a('array');
+  })
 });
 //_.each(inputArray,function(arrayElement){newArray.push(arrayElement*3);})
