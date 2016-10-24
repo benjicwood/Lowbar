@@ -187,7 +187,11 @@ describe('_.filter', function () {
             return num % 2 == 0;
         })).to.eql([]);
     });
+  });
 
-
+describe('_.reject', function () {
+  it('should be a function', function () {
+    expect(_.reject).to.be.a('function');
+  });
 });
 //_.each(inputArray,function(arrayElement){newArray.push(arrayElement*3);})

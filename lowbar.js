@@ -61,11 +61,14 @@ var newArray=[];
   for(i=0;i<array.length;i++){
     if(fun(array[i])){
       newArray.push(array[i]);
-    }    
+    }
   }
 return newArray;
 };
 
+_.reject = function () {
+
+};
 
 
 if (typeof module !== 'undefined') {
