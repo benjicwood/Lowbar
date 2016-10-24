@@ -56,9 +56,9 @@ _.indexOf = function (num, array, isSorted) {
 
 };
 
-_.filter = function () {
+_.filter = function (array, fun) {
 
-  
+
 };
 
 

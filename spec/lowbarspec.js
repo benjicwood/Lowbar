@@ -148,7 +148,9 @@ describe('_.filter', function () {
     expect(_.filter).to.be.a('function');
   });
 
-
-
+    it('takes two arguments', function () {
+        expect(_.filter.length).to.equal(2);
+    });
+    
 
 });
