@@ -112,7 +112,7 @@ _.pluck = function (array, propertyName) {
   return newArray;
 };
 
-_.reduce= function(array, fun){
+_.reduce = function(array, fun){
 returnValue=0;
   for(i=0;i<array.length;i++){
     returnValue= fun(returnValue,array[i]);
@@ -120,15 +120,22 @@ returnValue=0;
   return returnValue;
 }
 
-_.contains= function(list,val){
-  
+_.contains = function(list,val){
   return (_.indexOf(list,val)==-1);
 
 }
 
-_.every=function(list, fun){
-
+_.every = function(list, fun){
   for(i=0;i<list.length;i++){
    if (!fun(list[i])){ return false;}
   } return true;
 }
+
+_.some = function (array, func) {
+array.forEach(function(e) {
+  if (this.e === true) {
+  return true;
+  }
+  return false;
+})
+  }

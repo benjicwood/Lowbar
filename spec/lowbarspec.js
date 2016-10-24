@@ -277,58 +277,111 @@ describe('_.pluck', function () {
 });
 
 describe('_.reduce', function () {
-    it('should be a function', function () {
-        expect(_.reduce).to.be.a('function');
-    });
-    it('should take at least 2 arguments', function () {
-        expect(_.reduce.length).to.be.least(2);
-    });
-    it('[1,2,3] should return 6', function () {
-        var input = [1,2,3];
-        expect(_.reduce(input, function (a,b) {
-            return a+b;
-        })).to.eql(6);
-    });
-
-
-    });
-
+  it('should be a function', function () {
+    expect(_.reduce).to.be.a('function');
+  });
+  it('should take at least 2 arguments', function () {
+    expect(_.reduce.length).to.be.least(2);
+  });
+  it('[1,2,3] should return 6', function () {
+      var input = [1,2,3];
+      expect(_.reduce(input, function (a,b) {
+      return a+b;
+  })).to.eql(6);
+  });
+});
 describe('_.contains', function () {
-    it('should be a function', function () {
-        expect(_.contains).to.be.a('function');
-    });
-    it('should take at least 2 arguments', function () {
-        expect(_.contains.length).to.be.least(2);
-    });
-    it('should return true for _.contains([1,2,3],3)', function () {
-        expect(_.contains([1,2,3],3)).to.equal(true);
-    });
-    it('should return true for [,a,b,c],c', function () {
-        expect(_.contains(['a','b','c'],'c')).to.equal(true);
-    });
-
-
+  it('should be a function', function () {
+    expect(_.contains).to.be.a('function');
+  });
+  it('should take at least 2 arguments', function () {
+    expect(_.contains.length).to.be.least(2);
+  });
+  it('should return true for _.contains([1,2,3],3)', function () {
+    expect(_.contains([1,2,3],3)).to.equal(true);
+  });
+  it('should return true for [,a,b,c],c', function () {
+    expect(_.contains(['a','b','c'],'c')).to.equal(true);
+  });
 });
-
-
 describe('_.every', function () {
-    it('should be a function', function () {
-        expect(_.every).to.be.a('function');
-    });
-    it('should take at least 2 arguments', function () {
-        expect(_.every.length).to.be.least(2);
-    });
-    it('should return true for _.every([1,2,3],3)', function () {
-        var input = [2, 4, 6 ];
-
-        expect(_.every(input,function(num){
-               if(num%2===0){return true}  })).to.equal(true);
-    });
-    it('should return false for _.every([2,5,6)', function () {
-        var input = [2, 4, 6 ];
-
-        expect(_.every(input,function(num){
-            if(num%2===0){return true}  })).to.equal(true);
-    });
-    
+  it('should be a function', function () {
+    expect(_.every).to.be.a('function');
+  });
+  it('should take at least 2 arguments', function () {
+    expect(_.every.length).to.be.least(2);
+  });
+  it('should return true for _.every([1,2,3],3)', function () {    var input = [2, 4, 6 ];
+  expect(_.every(input,function(num){
+  if(num%2===0){return true}  })).to.equal(true);
+  });
+  it('should return false for _.every([2,5,6)', function () {
+  var input = [2, 4, 6 ];
+  expect(_.every(input,function(num){
+  if(num%2===0){return true}  })).to.equal(true);
+  });
 });
+describe('_.some', function () {
+  it('is a function', function () {
+  expect(_.some).to.be.a('function');
+  });
+  it('should return true for [1,2,3], contains even number', function() {
+    var input = [1,2,3];
+    expect(_.some(input, function (num) { if (num % 2 === 0) { return true}}))
+  });
+  it('should return false for [1,3,5], contains even number', function() {
+    var input = [1,3,5];
+    expect(_.some(input, function (num) { if (num % 2 === 0) { return true}}))
+  });
+});
+
+
+/*
+
+_.pluck = function (array, propertyName) {
+  var newArray=[];
+  if (!array) {
+    return [];
+  }
+  for(i=0;i<array.length;i++){
+  newArray.push(array[i][propertyName]);
+  };
+  return newArray;
+};
+/*
+_.reduce = function () {
+var accumulator, newList;
+if (initialValue === list[0]); {
+newList = list.slice(1);
+}
+else {
+  accumulator = initialValue;
+  newList = list;
+}
+_.each(newList, function (value, key, list) {
+  accumulator = reducer(accumulator, value, key, list);
+});
+
+return accumulator;
+
+};
+
+
+
+_.memoize = function (func) {
+var memoize = function (key) {
+  var cache = memoize.cache;
+  var address = '' + key;
+  if (cache[address] === undefined) {
+    cache[address] = func.apply(this, arguments);
+  }
+  return cache[address];
+};
+
+memoize.cache = {};
+
+return memoize;
+};
+
+
+*/
