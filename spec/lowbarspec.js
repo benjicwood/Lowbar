@@ -165,6 +165,28 @@ describe('_.filter', function () {
         };
         expect(_.filter(input, fun)).to.be.a('array');
     })
+    it('var input=[1,2,3,4,5,6,7] should return only even numbers', function () {
+        var input = [1, 2, 3, 4, 5, 6, 7];
+        var output = [];
+        //var fun=function(inputElement){ if(inputElement%2==0);{return true;}};
+        expect(_.filter(input, function (num) {
+            return num % 2 == 0;
+        })).to.eql([2, 4, 6]);
+    });
+    it('var input=[1,2,3,4,5,6,7,8] should return only even numbers', function () {
+        var input = [1, 2, 3, 4, 5, 6, 7, 8];
+        var output = [];
+        expect(_.filter(input, function (num) {
+            return num % 2 == 0;
+        })).to.eql([2, 4, 6, 8]);
+    });
+    it('var input=[1,3,5,7,9] should return only even numbers', function () {
+        var input = [1, 3, 5, 7, 9];
+        var output = [];
+        expect(_.filter(input, function (num) {
+            return num % 2 == 0;
+        })).to.eql([]);
+    });
 
 
 });
