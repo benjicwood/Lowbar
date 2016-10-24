@@ -92,3 +92,14 @@ if (uniqArray.indexOf(e) === -1) {
 });
 return uniqArray
 }
+
+_.map=function(array,fun){
+
+  var newArray=[];
+  for(i=0;i<array.length;i++){
+
+      newArray.push(fun(array[i]));
+    };
+  
+  return newArray;
+}
