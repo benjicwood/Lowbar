@@ -139,3 +139,15 @@ array.forEach(function(e) {
   return false;
 })
   }
+
+
+_.extends = function (dest, src) {
+  for (var key in src) {
+    dest[key] = src[key];
+  }
+  return dest;
+};
+
+var ben = {name: 'Ben', age: '27', hobbies: [1,2,3]};
+var benClone = _.extends({}, ben);
+ben.hobbies.push(4);
