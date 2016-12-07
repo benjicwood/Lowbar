@@ -4,10 +4,6 @@ var _ = {};
 
 // identity
 
-_.identity = function (x) {
-  return x;
-};
-
 // first
 
 _.first = function (array, num) {
@@ -92,6 +88,8 @@ _.indexOf = function (num, array, isSorted) {
     }
   }
 };
+
+// binary search ^
 
 // filter
 
@@ -220,21 +218,27 @@ _.once = function (fn) {
 //   console.log('Hello');
 // }
 
-_.memoize = function (func) {
-var cache = {};
-
-return function () {
-var stringyArgument = JSON.stringify(arguments[0]);
-  if(cache[stringyArgument]) {
-    return cache[stringyArgument];
-  }
+_.memoize = function (func, hash) {
+  var cache = {};
+  var stringArgs;
+  var get = function () {
+    if(hash) {
+      stringArgs = hash.apply(null, arguments);
+    } else {
+      stringArgs = JSON.stringify(arguments[0]);
+    }
+    if(cache[stringArgs]) {
+      return cache[stringArgs];
+    }
     else {
       var result = func.apply(null, arguments);
-      cache[stringyArgument] = result
-  return result
-  }
-}
-}
+      cache[stringArgs] = result;
+      return result;
+    }
+  };
+  get.cache = cache;
+  return get;
+};
 
 if (typeof module !== 'undefined') {
     module.exports = _;
