@@ -1,7 +1,8 @@
+/* global describe, it */
 var path = require('../lowbar/identity');
 var expect = require('chai').expect;
 
-var _ = require('../lowbar/identity.js');
+var _ = require('../lowbar/identity');
 
 describe('_.identity', function () {
   it('_.identity is a function', function () {
