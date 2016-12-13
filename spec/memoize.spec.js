@@ -1,8 +1,9 @@
 /* global describe, it */
-var path = require('../lowbar/map');
+var path = require('../lowbar/memoize');
 var expect = require('chai').expect;
+var sinon = require('sinon');
 
-var _ = require('../lowbar/map');
+var _ = require('../lowbar/memoize');
 
 describe('_.memoize', function () {
   it('is a function', function () {

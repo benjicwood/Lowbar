@@ -1,3 +1,4 @@
+/* global describe, it */
 var path = require('../lowbar/indexOf');
 var expect = require('chai').expect;
 

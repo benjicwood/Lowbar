@@ -1,5 +1,5 @@
 var _ = {};
 
 if (typeof module !== 'undefined') {
-    module.exports = _;
+  module.exports = _;
 }
