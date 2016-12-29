@@ -18,7 +18,6 @@ if (array.indexOf(value) > 0) {
 return -1
 }
 
-// 
 // _.indexOf = function (number, array, thirdArg) {
 //   if (!array) {
 //     return -1;

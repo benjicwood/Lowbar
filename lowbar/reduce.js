@@ -1,9 +1,9 @@
 var _ = {};
 
-_.reduce = function (array, fun) {
-  var returnValue = 0;
+_.reduce = function (array, fn, initial) {
+  var returnValue = initial;
   for (var i = 0; i < array.length; i++) {
-    returnValue = fun(returnValue, array[i]);
+    returnValue = fn(returnValue, array[i]);
   }
   return returnValue;
 };
